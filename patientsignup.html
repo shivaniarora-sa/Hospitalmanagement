@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+{% load widget_tweaks %}
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>City Hospital</title>
+  <link rel="shortcut icon" href="{% static 'images/title.png' %}" type="image/x-icon">
+
+  <style type="text/css">
+<!--    body {-->
+<!--      color: #aa082e;-->
+<!--      background-color: #b6bde7;-->
+<!--      font-family: 'Roboto', sans-serif;-->
+<!--    }-->
+
+<!--    a:link {-->
+<!--      text-decoration: none;-->
+<!--    }-->
+
+<!--    .note {-->
+<!--      text-align: center;-->
+<!--      height: 80px;-->
+<!--      background: -webkit-linear-gradient(left, #0072ff, #8811c5);-->
+<!--      color: #fff;-->
+<!--      font-weight: bold;-->
+<!--      line-height: 80px;-->
+<!--    }-->
+
+<!--    .form-content {-->
+<!--      padding: 5%;-->
+<!--      border: 1px solid #ced4da;-->
+<!--      margin-bottom: 2%;-->
+<!--    }-->
+
+<!--    .form-control {-->
+<!--      border-radius: 1.5rem;-->
+<!--    }-->
+
+<!--    .btnSubmit {-->
+<!--      border: none;-->
+<!--      border-radius: 1.5rem;-->
+<!--      padding: 1%;-->
+<!--      width: 20%;-->
+<!--      cursor: pointer;-->
+<!--      background: #0062cc;-->
+<!--      color: #fff;-->
+<!--    }-->
+ *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    section6{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex   ;
+    }
+    section6 .imgBx{
+        position: relative;
+        width: 50%;
+        height: 100%;
+    }
+    section6 .imgBx::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(225deg,#00255c93,#b9d3fd9d);
+        z-index: 1;
+        /* mix-blend-mode: screen; */
+    }
+    section6 .imgBx img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    section6 .contentBx{
+        display: flex  ;
+        width: 50%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        overflow-y: scroll;
+
+    }
+    section6 .contentBx .formBx{
+        width: 50%;
+    }
+    section6 .contentBx .formBx h2{
+        color:#607d8b;
+        font-weight: 600;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        border-bottom: 4px solid #0d6efd;
+        display: inline-block;
+        letter-spacing: 1px;
+    }
+    section6 .contentBx .formBx .inputbx{
+        margin-bottom: 20px;
+    }
+    section6 .contentBx .formBx .inputbx span{
+        font-size: 16px;
+        margin-bottom: 5px;
+        display: inline-block;
+        color: #607d8b;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+    section6 .contentBx .formBx .inputbx input{
+        width: 100%;
+        padding: 10px 20px;
+        outline: none;
+        font-weight: 400;
+        border: 1px solid #0d6efd;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: #0d6efd;
+        background: transparent;
+        border-radius: 30px;
+    }
+    section6 .contentBx .formBx .inputbx select{
+        width: 100%;
+        padding: 10px 20px;
+        outline: none;
+        font-weight: 400;
+        border: 1px solid #0d6efd;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: #0d6efd;
+        background: transparent;
+        border-radius: 30px;
+    }
+    section6 .contentBx .formBx .inputbx input[type="submit"]{
+        background-color:#0d6efd ;
+        color: #fff;
+        outline: none;
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    section6 .contentBx .formBx .inputbx input[type="submit"]:hover{
+        background-color: #004bba;
+    }
+    section6 .contentBx .formBx .inputbx p {
+        color: #607d8b;
+    }
+    section6 .contentBx .formBx .inputbx p a{
+        color: #004bba;
+    }
+    @media(max-width: 768px){
+        section6 .imgBx{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        section6 .contentBx{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding-top: 55%;
+            z-index: 1;
+        }
+        section6 .contentBx .formBx{
+            width: 100%;
+            padding: 40px;
+            margin: 50px;
+            background-color:#fff ;
+        }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+  {% include "hospital/navbar.html" %}
+  <section6>
+    <div class="imgBx">
+        <img src="{% static 'images/paitient1.jpg'%}" alt="">
+    </div>
+    <div class="contentBx">
+        <div class="formBx" style="margin-top: 80%;">
+           <p style="text-align: center; font-size:30px;color:#0d6efd;font-weight:700;">Register to Hospital </p>
+            <h2>Sign up</h2>
+            <form action=""  method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="inputbx">
+                    <span>Firstname</span>
+                     {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+                </div> <div class="inputbx">
+                    <span>Lastname</span>
+                     {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+                </div>
+                <div class="inputbx">
+                    <span>Username</span>
+                    {% render_field userForm.username class="form-control" placeholder="Username" %}
+                </div>
+                <div class="inputbx">
+                    <span>Password</span>
+                     {% render_field userForm.password class="form-control" placeholder="Password" %}
+                </div>
+                <div class="inputbx">
+                    <span>Department</span>
+                   {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Doctor" %}
+                </div>
+                <div class="inputbx">
+                    <span>Contact</span>
+                     {% render_field patientForm.mobile class="form-control" pattern="[6789][0-9]{9}" placeholder="Contact Number" %}
+                </div>
+                <div class="inputbx">
+                    <span>Address</span>
+                     {% render_field patientForm.address class="form-control" placeholder="Address" %}
+                </div>
+
+              <div class="inputbx">
+                    <span>Symptoms</span>
+                     {% render_field patientForm.symptoms class="form-control" placeholder="Symptoms" %}
+                </div>
+
+                <div class="inputbx">
+                    <span>Profile Picture</span>
+                     {% render_field patientForm.profile_pic required="required" class="form-control" placeholder="Profile Picture" %}
+                </div>
+                <div class="inputbx">
+
+                    <input type="submit" value="Register">
+                </div>
+                <div class="inputbx">
+
+                    <p>Already have an account? <a href="patientlogin">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section6>
+<!--  <br>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <br>-->
+
+
+
+
+
+<!--  <form method="post" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--    <div class="container register-form">-->
+<!--      <div class="form">-->
+<!--        <div class="note">-->
+<!--          <p>Register to Hospital</p>-->
+<!--        </div>-->
+
+<!--        <div class="form-content">-->
+<!--          <div class="row">-->
+<!--            <div class="col-md-6">-->
+<!--              <div class="form-group">-->
+<!--                {% render_field userForm.first_name class="form-control" placeholder="First Name" %}-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                {% render_field userForm.username class="form-control" placeholder="Username" %}-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                {% render_field patientForm.address class="form-control" placeholder="Address" %}-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                {% render_field patientForm.symptoms class="form-control" placeholder="Symptoms" %}-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                {% render_field patientForm.profile_pic required="required" class="form-control" placeholder="Profile Picture" %}-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-6">-->
+<!--              <div class="form-group">-->
+<!--                {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                {% render_field userForm.password class="form-control" placeholder="Password" %}-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                {% render_field patientForm.mobile class="form-control" pattern="[6789][0-9]{9}" placeholder="Contact Number" %}-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Doctor" %}-->
+<!--              </div>-->
+
+<!--            </div>-->
+<!--          </div>-->
+<!--          <button type="submit" class="btnSubmit">Register</button>-->
+<!--          <div class="text-center">Already have an account? <a href="patientlogin">Login here</a></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </form>-->
+
+  {% include "hospital/footer.html" %}
+</body>
+
+
+</html>

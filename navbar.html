@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style type="text/css">
+
+
+    .navbar-brand {
+      font-size: 4vmin;
+      font-family: sans-serif;
+
+    }
+    .a:hover{
+    color:white;
+        border-bottom:2px solid white;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background:#0d6efd;">
+      <a href="/" class="navbar-brand"><i class="fa-solid fa-circle-h" style="color:rgb(255, 109, 109);"></i>City Hospital</a>
+      <button style="width:10%; padding:0" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#abc">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+      <div class="collapse navbar-collapse " id="abc">
+          <ul class="navbar-nav ml-auto">
+            <li>
+               <a href="/adminclick" class=" nav-link"><span class="a" >Admin</span></a>
+            </li>
+            <li>
+               <a href="/doctorclick" class=" nav-link"><span class="a" >Doctor</span></a>
+            </li>
+             <li>
+                <a href="/patientclick" class=" nav-link"><span class="a" >Patient</span></a>
+            </li> <li>
+               <a href="/contactus" class=" nav-link"><span class="a" >Contact Us</span></a>
+            </li>
+
+          </ul>
+<!--        <div class="navbar-nav ml-auto">-->
+<!--          <a href="/adminclick" class=" nav-link">Admin</a>-->
+<!--          <a href="/doctorclick" class=" nav-link">Doctor</a>-->
+<!--          <a href="/patientclick" class=" nav-link">Patient</a>-->
+<!--          <a href="/contactus" class=" nav-link">Contact Us</a>-->
+<!--        </div>-->
+
+      </div>
+    </nav>
+
+
+ 
+
+</body>
+
+</html>

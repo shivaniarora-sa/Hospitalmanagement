@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>City Hospital</title>
+  <link rel="shortcut icon" href="{% static 'images/title.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+  {% include "hospital/navbar.html" %}
+  {%block content%}
+
+  {%endblock content%}
+  {% include "hospital/footer.html" %}
+</body>
+
+
+</html>
